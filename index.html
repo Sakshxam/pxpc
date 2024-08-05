@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parallax 3D Profile Card</title>
+    <link rel="icon" href="image.gif" type="image/gif"> <!-- Ensure this is a circular image -->
     <style>
         body, html {
             height: 100%;
@@ -196,42 +197,23 @@
         .deal-button:hover {
             background: #e68900;
         }
-
-        .theme-switcher {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            padding: 10px 20px;
-            background: #fff;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-
-        .theme-switcher:hover {
-            background: #dcdcdc;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <button class="theme-switcher" onclick="switchTheme()">Switch Theme</button>
         <div id="card" class="card">
             <div class="card__face card__face--front">
                 <div class="card__content">
                     <div class="card__image"></div>
                     <p class="card__name">Saksham</p>
-                    <p class="card__post">Hello There My Name Is Saksham. And Yeah I made this Card you can explore it. If you liked it and want to customize ! feel free to message me @ Discord</p>
+                    <p class="card__post">Hello There My Name Is Saksham. And Yeah I made this Card you can explore it. If you liked it and want to customize! Feel free to message me @ Discord</p>
                     <button class="flip-button" onclick="flipCard()">Flip Card</button>
                 </div>
             </div>
             <div class="card__face card__face--back">
                 <div class="card__content">
                     <p class="card__name">About Me</p>
-                    <p class="card__post">I am passionate about computer, Science and technology. Always curious Learning, coding, and exploring new tech with enthusiasm!</p>
+                    <p class="card__post">I am passionate about computer science and technology. Always curious, learning, coding, and exploring new tech with enthusiasm!</p>
                     <div class="card__social">
                         <a href="https://discord.com/users/818340729511215166" target="_blank">
                             <img src="discord.png" alt="Discord">
@@ -252,7 +234,6 @@
     </footer>
     <script>
         let card = document.getElementById('card');
-        let isDarkTheme = false;
 
         function flipCard() {
             card.classList.toggle('is-flipped');
@@ -263,13 +244,6 @@
             setTimeout(() => {
                 card.classList.remove('shake');
             }, 2500);
-        }
-
-        function switchTheme() {
-            isDarkTheme = !isDarkTheme;
-            document.body.classList.toggle('dark-theme', isDarkTheme);
-            document.querySelector('.container').classList.toggle('dark-theme', isDarkTheme);
-            document.querySelector('footer').classList.toggle('dark-theme', isDarkTheme);
         }
 
         function redirectToDiscord() {
